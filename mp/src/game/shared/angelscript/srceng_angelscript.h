@@ -1,3 +1,6 @@
+#ifndef SRCENG_ANGELSCRIPT_H
+#define SRCENG_ANGELSCRIPT_H
+
 #ifdef _WIN32
 #pragma once
 #endif
@@ -26,3 +29,4 @@ extern CAngelScript g_AngelScript_Server;
 #elif	CLIENT_DLL
 extern CAngelScript g_AngelScript_Client;
 #endif //  GAME_DLL
+#endif
