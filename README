@@ -1,5 +1,7 @@
 EXTREMELY BASIC implrementation of AngelScript to the Source SDK 2013.
 
+NOTE: compile on release, the angelscript lib was compiled for release, so in order to build for debug you'll have to compile the angelscript lib on debug.
+
 -------------------------------------------------------------------
 
                SOURCE 1 SDK LICENSE
