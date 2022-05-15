@@ -745,8 +745,6 @@ bool CServerGameDLL::DLLInit( CreateInterfaceFn appSystemFactory,
 	gamestatsuploader->InitConnection();
 #endif
 
-	g_AngelScript_Server.Init();
-
 	return true;
 }
 
@@ -782,8 +780,6 @@ void CServerGameDLL::DLLShutdown( void )
 #ifdef CSTRIKE_DLL // BOTPORT: TODO: move these ifdefs out
 	RemoveBotControl();
 #endif
-
-	g_AngelScript_Server.Shutdown();
 
 #ifndef _XBOX
 #ifdef USE_NAV_MESH
@@ -869,6 +865,8 @@ bool CServerGameDLL::GameInit( void )
 		gameeventmanager->FireEvent( event );
 	}
 
+	g_AngelScript_Server.Init();
+
 	return true;
 }
 
@@ -877,6 +875,7 @@ bool CServerGameDLL::GameInit( void )
 void CServerGameDLL::GameShutdown( void )
 {
 	ResetGlobalState();
+	g_AngelScript_Server.Shutdown();
 }
 
 static bool g_OneWayTransition = false;
