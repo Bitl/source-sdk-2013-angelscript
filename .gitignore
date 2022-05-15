@@ -453,3 +453,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 *.pdb
+*.FileListAbsolute.txt
