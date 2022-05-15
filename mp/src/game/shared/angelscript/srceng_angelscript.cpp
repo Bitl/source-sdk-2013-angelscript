@@ -77,7 +77,16 @@ void CAngelScript::Init()
 		// Set the message callback to receive information on errors in human readable form.
 		int r = m_hScriptEngine->SetMessageCallback(asFUNCTION(MessageCallback), 0, asCALL_CDECL);
 		Msg("CAngelScript (%s): SetMessageCallback returned %i\n", m_sName, r);
-		Msg("CAngelScript (%s): Initalized!\n", m_sName);
+
+		if (r >= 0)
+		{
+			Warning("CAngelScript (%s): Initalizion failed due to invalid script message callback code...\n", m_sName);
+			return;
+		}
+		else
+		{
+			Msg("CAngelScript (%s): Initalized!\n", m_sName);
+		}
 	}
 }
 
