@@ -78,7 +78,7 @@ void CAngelScript::Init()
 		int r = m_hScriptEngine->SetMessageCallback(asFUNCTION(MessageCallback), 0, asCALL_CDECL);
 		Msg("CAngelScript (%s): SetMessageCallback returned %i\n", m_sName, r);
 
-		if (r >= 0)
+		if (r < 0)
 		{
 			Warning("CAngelScript (%s): Initalizion failed due to invalid script message callback code...\n", m_sName);
 			return;
